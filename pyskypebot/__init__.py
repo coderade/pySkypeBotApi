@@ -8,8 +8,6 @@ from pyskypebot import apihelper
 
 
 class SkypeBotApi:
-    # https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-quickstart?view=azure-bot-service-3.0#get-token
-    # https://docs.microsoft.com/en-us/azure/bot-service/rest-api/bot-framework-rest-connector-quickstart?view=azure-bot-service-3.0
     def __init__(self, client_id, client_secret):
         def token_func():
             global token
