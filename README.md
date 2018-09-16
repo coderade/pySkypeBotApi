@@ -8,6 +8,7 @@ A simple Skype bot wrapper using Python and Flask for the
   * [Writing your first bot](#writing-your-first-bot)
     * [Prerequisites](#prerequisites)
     * [A simple echo bot](#a-simple-echo-bot)
+  * [Examples](#examples)
 
 ## Getting started
 
@@ -100,13 +101,13 @@ def main():
 ```
 *Note: Make sure to actually set `SKYPE_BOT_APP_ID` and `SKYPE_BOT_APP_SECRET` in the .env file.*
 
-# Examples
+## Examples
 
 You can found some examples of how handle a message in a private our group chats or how handle the conversations updates
 like members removed aor added and how handle when the bot is added or removed in a private chat on the 
 [send_message.py](examples/send_mensage.py) file on the [examples](examples) directory on this project.
 
-## Another examples
+### Another examples
 
 #### Adding the Bot for a private conversation
 Example of how handle when you add the bot as your contact
