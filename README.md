@@ -160,8 +160,8 @@ Attachments types:
 1. Hero card
 2. Thumbnail card
 3. Carousel card (with hero or thumbnail images)
-4. Sign in card #Not Implemented in this wrapper
-5. Receipt card #Not implemented in this wrapper
+4. Sign in card - Not Implemented in this wrapper yet
+5. Receipt card - Not implemented in this wrapper yet
 
 
 ##### Send a image attachment
@@ -180,7 +180,7 @@ def process_message(sender,text):
             bot.send_card(sender,"carousel", [attachment1],text="hello")
 ```
 
-###$ Send a carousel attachment
+#### Send a carousel attachment
 
 ```
 def process_message(sender,text):
@@ -210,9 +210,13 @@ def process_message(sender,text):
   bot.send_media(sender,"image/jpg", 'http://foo.com/1312312 ')
 ```
 
+## TODO
+
+- Finish the tests 
+- Create a initial release and a pip package
 
 ## Credits
-This project is based on the [puneetsngh](https://github.com/puneetsngh) [pythonSkypeBot](https://github.com/puneetsngh/pythonSkypeBot) 
+This project is based on the [puneetsngh](https://github.com/puneetsngh) - [pythonSkypeBot](https://github.com/puneetsngh/pythonSkypeBot) 
 for python 2.
 
 
