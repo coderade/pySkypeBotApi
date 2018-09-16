@@ -3,7 +3,7 @@
 import sys
 import traceback
 import json
-from imp import reload
+from importlib import reload
 import pyskypebot
 
 from flask import Flask, request

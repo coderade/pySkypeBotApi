@@ -13,15 +13,13 @@ class SkypeBotApi:
     def __init__(self, client_id, client_secret):
         def token_func():
             global token
-            payload = "grant_type=client_credentials&client_id=" + client_id + "&client_secret=" + client_secret \
-                      + "&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
-            response = requests.post(
-                "https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token?client_id=" + client_id
-                + "&client_secret=" + client_secret
-                + "&grant_type=client_credentials&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default",
-                data=payload, headers={"Content-Type": "application/x-www-form-urlencoded"})
-            data = response.json()
-            token = data["access_token"]
+
+            if not client_id:
+                raise ValueError('The "client_id" is empty. Please add a valid client_id.')
+            elif not client_secret:
+                raise ValueError('The "client_secret" is empty. Please add a valid client_secret.')
+            else:
+                token = self.get_token(client_id, client_secret)
 
         def execute():
             while True:
@@ -56,3 +54,16 @@ class SkypeBotApi:
     # Not yet supported
     def send_action(self, service, sender):
         return apihelper.send_action(token, service, sender)
+
+    @staticmethod
+    def get_token(client_id, client_secret):
+        payload = "grant_type=client_credentials&client_id=" + client_id + "&client_secret=" + client_secret \
+                  + "&scope=https%3A%2F%2Fapi.botframework.com%2F.default"
+
+        response = requests.post(
+            "https://login.microsoftonline.com/botframework.com/oauth2/v2.0/token?client_id=" + client_id
+            + "&client_secret=" + client_secret
+            + "&grant_type=client_credentials&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default",
+            data=payload, headers={"Content-Type": "application/x-www-form-urlencoded"})
+        data = response.json()
+        return data["access_token"]
