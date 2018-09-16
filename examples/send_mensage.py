@@ -1,21 +1,24 @@
 # -*- coding: utf-8 -*-
 
+import os
 import sys
 import traceback
 import json
 from importlib import reload
 import pyskypebot
-
+from dotenv import load_dotenv
 from flask import Flask, request
+
+load_dotenv()
 
 reload(sys)
 
 app = Flask(__name__)
 
-client_id = ''
-client_secret = ''
+APP_ID = os.getenv("SKYPE_BOT_APP_ID")
+APP_SECRET = os.getenv("SKYPE_BOT_APP_SECRET")
 
-bot = pyskypebot.SkypeBotApi(client_id, client_secret)
+bot = pyskypebot.SkypeBotApi(APP_ID, APP_SECRET)
 
 
 @app.route('/', methods=['POST'])
