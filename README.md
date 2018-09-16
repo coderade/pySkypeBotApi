@@ -18,7 +18,7 @@ A simple Skype bot wrapper using Python and Flask for the
 This API is tested with the latest version of Python (3.6), Pypy and Pypy 3.
 There are two ways to install the library:
 
-* Installation using pip (a Python package manager)* (ps. not available yet):
+* Installation using pip (a Python package manager)* **(ps. not available yet)**:
 
 ```
 $ pip install pySkypeBotApi
@@ -34,7 +34,7 @@ $ python setup.py install
 It is generally recommended to use the first option.
 
 **The API is not production-ready, but I will try to make this ASAP (You can too!). So it is not recommended to use in 
-a Production environment yet. 
+a Production environment yet**. 
 
 ## Writing your first bot
 
