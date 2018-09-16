@@ -10,7 +10,7 @@ A simple Skype bot wrapper using Python and Flask for the
     * [A simple echo bot](#a-simple-echo-bot)
   * [Examples](#examples)
 
-# Status
+## Status
 [![Known Vulnerabilities](https://snyk.io/test/github/coderade/pySkypeBotApi/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/coderade/pySkypeBotApi?targetFile=requirements.txt)
 
 ## Getting started
